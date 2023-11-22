@@ -1,0 +1,18 @@
+{% extends "IturbeSeguros.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container text-center"><font color="White">
+    <h1 class="display-4">  Polizas </h1>
+<br>
+
+<img class="img-fluid rounded-circle mb-3" src= {% static 'images/poliza1.png' %} alt=""/>
+
+<a class="btn btn-primary" href="{% url 'crear_poliza' %}">Crear Poliza</a>
+<a class="btn btn-primary" href="{% url 'buscador' %}">Buscar Poliza</a>
+<br>
+<br>
+
+    </div>
+{% endblock %}

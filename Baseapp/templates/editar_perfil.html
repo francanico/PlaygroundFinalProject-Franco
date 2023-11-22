@@ -1,0 +1,25 @@
+{% extends "IturbeSeguros.html" %}
+
+{% block content %}
+
+<div class="container text-center">
+<font color="White">
+        <h1 class="display-2"> Editar Perfil </h1>
+
+        <section class="bg-light">
+            <div class="container">
+                <form class="p-8 p-lg-3" style=" width: 30vw; margin-left : 15vw; margin-Top : 0vw;" action={% url 'editar_perfil' %} method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table class="table table-borderless col-md-25 fst-italic ">
+                        {{ formava.as_table }}
+                    </table>
+                    <div py-3 py-lg-4>
+                        <button class="btn btn-primary"> Guardar</button>
+                        <a class="btn btn-primary" href={% url 'perfil' %} role="button"> Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+</div>
+<br>
+{% endblock %}

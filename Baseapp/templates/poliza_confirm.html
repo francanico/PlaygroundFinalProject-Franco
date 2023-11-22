@@ -1,0 +1,17 @@
+{% extends "IturbeSeguros.html" %}
+{% load static %}
+{% block content %}
+<div class="container text-center"> <font color="White">
+    <h1 class="display-3">Eliminar Poliza</h1>
+    <p>¿Estás seguro de que deseas eliminar el producto "{{ object.nombre }}"?</p>
+    <img class="img-fluid rounded-circle mb-3" src= {% static 'images/eliminar.png' %} alt=""/>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a href="{% url 'poliza' %}" class="btn btn-primary">Cancelar</a>
+    </form>
+
+<br>
+
+</div>
+{% endblock %}

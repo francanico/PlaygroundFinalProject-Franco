@@ -1,0 +1,68 @@
+{% extends "IturbeSeguros.html" %}
+{% load static %}
+{% block content %}
+<div class="container text-center"><font color="White">
+    <h1 class="display-3"> Mi Perfil </h1>
+
+    <section class="testimonials text-center bg-light">
+        <div class="container">
+            <div class="row p-3">
+                <div class="col-lg-4">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        {% if request.user.userextension.avatar %}
+                            <img class="img-fluid rounded-circle mb-3" src= {{ request.user.userextension.avatar.url }} alt="Avatar"/>
+                        {% else %}
+                            <img class="img-fluid rounded-circle mb-3" src= {% static 'img/blank-profile.jpg' %} alt="Sin avatar"/>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <table class="table fst-italic">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Username</th>
+                                <th scope="row">{{ request.user.username }}</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{ request.user.email }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Nombre</th>
+                                <td>{{ request.user.first_name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Apellido</th>
+                                <td>{{ request.user.last_name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="align-middle">Descripción</th>
+                                <td>
+                                    {% if request.user.userextension.descripcion %}
+                                        {{ request.user.userextension.descripcion }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Link</th>
+                                <td>
+                                    {% if request.user.userextension.link %}
+                                        <a href={{ request.user.userextension.link }}>
+                                            {{ request.user.userextension.link }}
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <a class="btn btn-primary" href="{% url 'editar_perfil' %}">Editar Perfil</a>
+    <a class="btn btn-primary" href="{% url 'changepass' %}">Cambio de Password</a>
+
+    <br><br>
+</div>
+    {% endblock %}

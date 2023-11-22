@@ -1,0 +1,56 @@
+{% extends "IturbeSeguros.html" %}
+{% block content %} 
+{% load static %}
+
+<div class="container text-center"><font color="White">
+    <h1 class="display-4">Contactanos</h1> 
+    <br>
+<form  method ="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-floating mb-3">
+    <label for="id_nombre">Nombre y Apellido:</label>
+    <input type="text" name="nombre" maxlength="100" required id="id_nombre">
+    </div>
+
+    <div class="form-floating mb-3">
+    <label for="id_email">Correo electronico:</label>
+    <input type="email" name="email" maxlength="254" required id="id_email">
+    </div>
+
+    <div class="form-floating mb-3">
+    <label for="id_message">Cartelera de Mensaje:</label>
+    </div>
+
+    <div class="django-ckeditor-widget" data-field-id="id_message" style="display: inline-block;">
+    <textarea name="message" cols="40" rows="10" id="id_message" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: &quot;Full&quot;, &quot;height&quot;: 291, &quot;width&quot;: 835, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;language&quot;: &quot;en-us&quot;}" data-external-plugin-resources="[]" data-id="id_message" data-type="ckeditortype"></textarea>
+    </div>
+
+    <div class="form-floating mb-3">
+    <label for="id_tipocontacto">Tipo de Contacto:</label>
+    <select class="form-floating mb-3" aria-label="Small select example" name="tipocontacto" required id="id_tipocontacto">
+    <option value="" selected></option>
+    <option value="0">Pedido de Informacion</option>
+    <option value="1">Consultoria de Polizas</option>
+    <option value="2">Presupuesto</option>
+    </select>
+    </div>
+
+    <div class="form-floating mb-3">
+    <label for="id_subs">Subscribete a Correos informativos mensuales:</label>
+    <input type="checkbox" name="subs" id="id_subs">
+    </div>
+
+    <div class="form-floating mb-3">
+    <label for="id_imagendoc">Cargue su Documento:</label>
+    <input  type="file" name="imagendoc" accept="image/*" required id="id_imagendoc">
+    </div>
+
+    <script src="/static/ckeditor/ckeditor-init.js" data-ckeditor-basepath="/static/ckeditor/ckeditor/" id="ckeditor-init-script"></script>
+    <script src="/static/ckeditor/ckeditor/ckeditor.js"></script>
+    <button class="btn btn-primary" style=" width: 5vw; margin-left : 0vw; margin-Top : 0.5vw;" type="submit"> Enviar </button>
+    <a class="btn btn-primary" style=" width: 5vw; margin-left : 0vw; margin-Top : 0.5vw;" href="{% url 'IturbeSeguros' %}">Volver</a>
+</form>
+<br>
+</div>
+{% endblock %}

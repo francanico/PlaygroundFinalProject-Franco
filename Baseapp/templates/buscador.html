@@ -1,0 +1,50 @@
+{% extends "IturbeSeguros.html" %}
+{% load static %}
+{% block content %}
+<div class="container text-center"><font color="White">
+    <h1 class="display-6"> Buscador de Polizas </h1>
+<br>
+
+<form method='GET' class="d-flex" role="search">
+    <input class="form-control me-2" style=" width: 20vw; margin-left : 15vw;margin-Top : 0vw;" type="search" name="categoria" id="categoria" placeholder= "Auto, Viaje, Vida">
+    <button class="btn btn-primary" type="submit">Buscar</button>
+</form>
+<img class="img-fluid rounded-circle mb-3" src= {% static 'images/buscar.png' %} alt=""/>
+<br>
+
+{% if polizas %}
+
+<p> <u> Buscando Datos: </u> {{categoria}} </p>
+
+
+    {% for poliza in polizas %}
+    <table class="table table-dark table-hover" >
+        <th>Asegurado:  {{poliza.nombre}}</th>
+        <th>Suma asegurada: {{poliza.precio}}$</th>
+        <th>Tipo Poliza: {{poliza.categoria}}</th>
+        <th>Email:  {{poliza.emailContacto}} </th>
+        {% if poliza.imagendocumento %}
+        <th>Foto Documento: <img class="img-fluid rounded mb-3" src= {{ poliza.imagendocumento.url}} alt="Documento"/> </th>
+        {% endif %}
+
+
+        <th><a class="btn btn-primary" href="{% url 'editar_poliza' poliza.id %}">Editar</a></th>
+        <th><a class="btn btn-primary" href="{% url 'eliminar_poliza' poliza.id %}">Eliminar</a></th>
+        </table>
+    {% endfor %}
+
+
+<br>
+{% else %}
+<p> No hay datos con esa descripcion. </p>
+
+{% endif %}
+<br>
+<p style="color: Red";>  {{respuesta}} </p>
+<br>
+    <a class="btn btn-primary" href="{% url 'poliza' %}">Volver</a>
+    <br>
+    <br>
+    <br>
+</div>
+{% endblock %}

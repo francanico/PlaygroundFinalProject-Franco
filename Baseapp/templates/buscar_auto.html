@@ -1,0 +1,51 @@
+{% extends "IturbeSeguros.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container text-center"><font color="White">
+    <h1 class="display-6"> Buscar Auto </h1>
+<br>
+<form method='GET' class="d-flex" role="search">
+    <input class="form-control me-2" style=" width: 20vw; margin-left : 15vw;margin-Top : 0vw;" type="search" name="placa" id="placa" placeholder= " Ingresa Placa ">
+    <button class="btn btn-primary" type="submit">Buscar</button>
+</form>
+<img class="img-fluid rounded-circle mb-3" src= {% static 'images/buscar.png' %} alt=""/>
+<br>
+
+{% if placas %}
+
+<p> <u> Buscando Datos: </u> {{placa}} </p>
+
+
+{% for placa in placas %}
+<table class="table table-dark table-hover" >
+<th>Marca: {{ placa.marca }} </th>
+<th>Modelo: {{ placa.modelo }} </th>
+<th>Color: {{placa.color}} </th>
+<th>Placa: {{placa.placa}}  </th>
+<th>Kms: {{placa.kilometraje}} </th>
+{% if placa.fotoauto %}
+<th>Foto: <img class="img-fluid rounded mb-3" src= {{ placa.fotoauto.url}} alt="Auto"/> </th>
+{% endif %}
+<th><a class="btn btn-primary" href="{% url 'editar_auto' placa.id %}">Editar</a></th>
+<th><a class="btn btn-primary" href="{% url 'eliminar_auto' placa.id %}">Eliminar</a></th>
+</table>
+{% endfor %}
+
+
+
+<br>
+{% else %}
+<p> No hay datos con esa descripcion. </p>
+
+{% endif %}
+
+<p style="color: Red";>  {{respuesta}} </p>
+<br>
+<br>
+    <a class="btn btn-primary" href="{% url 'auto' %}">Volver</a>
+    <br>
+    <br>
+    <br>
+</div>
+{% endblock %}

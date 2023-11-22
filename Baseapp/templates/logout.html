@@ -1,0 +1,25 @@
+{% extends "IturbeSeguros.html" %}
+{% load static %}
+{% block content  %}
+<font color="White">
+<br>
+
+
+
+<div class="container text-center">
+    <h1 class="display-5"><strong> Has Finalizado <br> Sesion</strong> </h1>
+</div>
+<div class="container text-center">
+<img class="img-fluid rounded mb-3" src= {% static 'images/logout1.png' %} alt=""/>
+</div>
+<div class="container text-center">
+    <a href="{% url 'user_login' %}" class="btn btn-primary" style=" width: 8vw;">Iniciar Sesion</a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

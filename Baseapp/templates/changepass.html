@@ -1,0 +1,19 @@
+{% extends "IturbeSeguros.html" %}
+
+{% block content %}
+<div class="container text-center"><font color="White">
+    <h1 class="display-3"> Cambio de Password </h1>
+    <h3 class="display-6"> Usuario Actual: <br> <strong>{{ request.user.username }} </strong> </h3>
+    
+<br>
+    <div class="container">
+        <form style=" width: 15vw; margin-left : 21vw;" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <br>
+            <button type="submit" class="btn btn-primary">Cambiar</button>
+        </form>
+    </div>
+<br>
+</div>
+{% endblock %}

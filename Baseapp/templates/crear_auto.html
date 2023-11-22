@@ -1,0 +1,58 @@
+{% extends "IturbeSeguros.html" %}
+
+{% block content %}
+<div class="container text-center"><font color="White">
+<h1 class="display-6"> Crear Auto </h1>
+
+<form method ="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+    <div class="form-floating mb-3">
+        <label  for="id_tipo">Tipo:</label>
+        <div class="form-floating mb-3">
+        <select class="form-floating mb-3" aria-label="Small select example" style=" width: 10vw; margin-left : 0vw;margin-Top : 0vw;" name="tipo" id="id_tipo">
+        <option value="sedan">Sedan</option>
+        <option value="Pick-up">Pick-up</option>
+        <option value="camion">Camion</option>
+        <option value="moto">Moto</option>
+        <option value="tractor">Tractor</option>
+        <option value="plataforma">Plataforma</option>
+        </select>
+    </div> 
+    </div> 
+        <div class="form-floating mb-3">
+        <label for="id_marca">Marca</label>
+        <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;margin-Top : 0vw;" type="text" name="marca" maxlength="50" required id="id_marca">
+    </div>
+        <div class="form-floating mb-3">
+        <label for="id_modelo">Modelo</label>
+        <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;margin-Top : 0vw;" type="text" name="modelo" maxlength="40" required id="id_modelo">
+    </div>
+        <div class="form-floating mb-3">
+        <label for="id_anio">Año</label>
+        <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;margin-Top : 0vw;" type="number" name="anio" required id="id_anio">
+    </div>
+        <div class="form-floating mb-3">
+        <label for="id_color">Color</label>
+        <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;margin-Top : 0vw;" type="text" name="color" maxlength="20" required id="id_color">
+    </div>
+        <div class="form-floating mb-3">
+        <label for="id_placa">Placa</label>
+        <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;margin-Top : 0vw;" type="text" name="placa" maxlength="30" required id="id_placa">
+    </div>
+        <div class="form-floating mb-3">
+        <label for="id_kilometraje">Kilometraje</label>
+        <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;margin-Top : 0vw;" type="number" name="kilometraje" required id="id_kilometraje">
+    </div>
+        <div class="form-floating mb-3">
+        <label for="id_fotoauto">Foto Del Vehiculo</label>
+        <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;margin-Top : 0vw;" type="file" name="fotoauto" accept="image/*" id="id_fotoauto">
+        </div>
+
+        <div class="form-floating mb-3"><button class="btn btn-primary" style=" width: 5vw; margin-left : 0vw; margin-Top : 0vw;" type="submit">Guardar</button>
+        <a class="btn btn-primary" style=" width: 5vw; margin-left : 0vw; margin-Top : 0vw;" href="{% url 'auto' %}">Volver</a></div>
+    </form>
+    
+</div>
+
+{% endblock %}

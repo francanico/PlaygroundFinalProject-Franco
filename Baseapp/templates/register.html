@@ -1,0 +1,44 @@
+{% extends "IturbeSeguros.html" %}
+
+{% block content %}
+<div class="container text-center"><font color="White">
+    <h1 class="display-4"> Registro </h1>
+
+<form method = "POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <div class="form-floating mb-3">
+    <label for="id_email">Email:</label>
+    <input class="form-control" style=" width: 20vw; margin-left : 20vw;margin-Top : 0vw;" placeholder="Ingresa Tu E-Mail" type="email" name="email" class="form-control" required id="id_email">
+</div>
+    <div class="form-floating mb-3">
+    <label for="id_username">Usuario:</label>
+    <input class="form-control" style=" width: 20vw; margin-left : 20vw;margin-Top : 0vw;" placeholder="Ejemplo: HarryPotter1" type="text" name="username" class="form-control" maxlength="20" autofocus required id="id_username">
+</div>
+    <div class="form-floating mb-3">
+    <label for="id_first_name">Nombre:</label>
+    <input class="form-control" style=" width: 20vw; margin-left : 20vw;margin-Top : 0vw;" placeholder="Ingresa Tu Nombre" type="text" name="first_name" class="form-control" maxlength="20" required id="id_first_name">
+</div>
+    <div class="form-floating mb-3">
+    <label for="id_last_name">Apellido:</label>
+    <input class="form-control" style=" width: 20vw; margin-left : 20vw;margin-Top : 0vw;" placeholder="Ingresa Tu Apellido" type="text" name="last_name" class="form-control" maxlength="20" required id="id_last_name">
+</div>
+    <div class="form-floating mb-3">
+    <label for="id_password1">Contraseña:</label>
+    <input class="form-control" style=" width: 20vw; margin-left : 20vw;margin-Top : 0vw;" placeholder="Ingresa tu contraseña" type="password" name="password1" class="form-control" required id="id_password1">
+</div>
+    <div class="form-floating mb-3">
+    <label for="id_password2">Repita Contraseña:</label>
+    <input class="form-control" style=" width: 20vw; margin-left : 20vw;margin-Top : 0vw;"placeholder="Repite la contraseña" type="password" name="password2" class="form-control" required id="id_password2">
+</div>
+    <div class="form-floating mb-3">
+    <button class="btn btn-primary" type= "submit"> Registrarse </button>
+</div> 
+<a class="btn btn-primary" href="{% url 'user_login' %}">Volver</a>
+</form>
+<br>
+<br>
+<br>
+</div>
+{% endblock  %}

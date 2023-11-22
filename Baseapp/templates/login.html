@@ -1,0 +1,36 @@
+{% extends "IturbeSeguros.html" %}
+{% load static %}
+{% block content  %}
+<div class="container text-center"><font color="White">
+    <h1 class="display-5"> Iniciar Sesión </h1>
+
+    <img class="img-fluid rounded-circle mb-3" src= {% static 'images/login.png' %} alt=""/>
+
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+            <div class="mb-3">
+            <label for="nombre" class="form-label">Usuario</label>
+            <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;" type="text" class="form-control" name="username" required >
+            </div>
+
+            <div class="mb-3">
+            <label for="contraseña" class="form-label">contraseña</label>
+            <input class="form-control" style=" width: 15vw; margin-left : 22.2vw;" type="password" class="form-control" name="password" required>
+            </div>
+        
+
+        <div><button class="btn btn-primary" style=" width: 10vw; margin-left : 0vw; margin-Top : 0.5vw;" type="submit"> Iniciar Sesión </button></div>
+    <div><a class="btn btn-primary" style=" width: 10vw; margin-left : 0vw; margin-Top : 0.5vw;" href="{% url 'registro' %}">Registrarse</a></div>
+        </form>
+        
+</div>
+<br>
+{% endblock %}
+
+
+
+
