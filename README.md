@@ -1,4 +1,4 @@
-# 3era Pre-entrega CoderHouse - Python
+# Entrega Final CoderHouse "PlaygroundFinalProject-Franco" - Python
 #### Comisión: 56040
 #### Alumno: Dimitri Franco
 
@@ -13,10 +13,15 @@ Los usuarios pueden realizar las siguientes accciones:
 
 -Crear polizas ( Campos a rellenar como "nombre, precio y Categoria")
 -Buscar polizas ( Los campo debe ser llenado por la categoria de poliza, bien sea salud viaje o auto)
--Crear Auto ( los campos a ser llenados son "Marca , modelo, color, plata y kilometraje" )
+-Crear Auto ( los campos a ser llenados son "Marca , modelo, color, placa, kilometraje, imagen" )
 -Buscar Auto (Para buscar un auto solo debemos ingresar numeros o letras asociados a la placa)
--Crear usuario ( Campos a rellenar como "nombre, edad y Registro")
--Buscar usuario ( para buscar un usuario debemos ingresar datos relacionados a su nombre )
+-Registrar usuario para iniciar sesion
+-Editar Perfil ( para buscar un usuario debemos ingresar datos relacionados a su nombre )
+-Cambiar Passwords
+-Formulario de contacto
+-Cambiar imagen de perfil
+-Editar y eliminar Datos de Polizas o Autos
+
 
 ## Tecnología Utilizada
 
