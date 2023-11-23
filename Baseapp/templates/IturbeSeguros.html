@@ -42,7 +42,7 @@
           {% if user.is_authenticated %}
           <a class="navbar-brand">
             <span>
-            Bienvenido {{user.username}} 
+            Bienvenido {{request.user.first_name}} 
             </span>
           </a>
           {% endif %}
