@@ -7,14 +7,14 @@ class PolizaForm(forms.ModelForm):
     descripcion= forms.CharField(widget=forms.Textarea(attrs={'cols': 20, 'rows': 1}))
     class Meta:
         model = Poliza
-        fields = ['nombre', 'categoria', 'descripcion','precio', 'telefonoContacto', 'emailContacto', 'imagendocumento']
+        fields = ['nombre', 'emailContacto', 'categoria', 'descripcion','precio', 'telefonoContacto', 'imagendocumento']
 
 
 
 class AutoForm(forms.ModelForm):
     class Meta:
         model= Auto
-        fields = ["tipo","marca","modelo","anio","color","placa","kilometraje","fotoauto"]
+        fields = ["tipo",'emailauto',"marca","modelo","anio","color","placa","kilometraje","fotoauto"]
 
 
 class FormContacto(forms.ModelForm):

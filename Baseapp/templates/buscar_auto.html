@@ -27,8 +27,10 @@
 {% if placa.fotoauto %}
 <th>Foto: <img class="img-fluid rounded mb-3" src= {{ placa.fotoauto.url}} alt="Auto"/> </th>
 {% endif %}
+{% if user.email == placa.emailauto %}
 <th><a class="btn btn-primary" href="{% url 'editar_auto' placa.id %}">Editar</a></th>
 <th><a class="btn btn-primary" href="{% url 'eliminar_auto' placa.id %}">Eliminar</a></th>
+{% endif %}
 </table>
 {% endfor %}
 

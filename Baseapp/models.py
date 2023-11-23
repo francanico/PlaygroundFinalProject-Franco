@@ -32,6 +32,7 @@ class Auto(models.Model):
     ('plataforma','Plataforma'),
     )
     tipo=models.CharField(max_length=15,choices=tipoauto,default="Sedan")
+    emailauto=models.CharField(max_length=50, verbose_name= "Email")
     marca= models.CharField(max_length=50)
     modelo= models.CharField(max_length=40)
     anio= models.IntegerField(null=True, verbose_name="Año")

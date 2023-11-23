@@ -27,9 +27,10 @@
         <th>Foto Documento: <img class="img-fluid rounded mb-3" src= {{ poliza.imagendocumento.url}} alt="Documento"/> </th>
         {% endif %}
 
-
+        {% if user.email == poliza.emailContacto %}
         <th><a class="btn btn-primary" href="{% url 'editar_poliza' poliza.id %}">Editar</a></th>
         <th><a class="btn btn-primary" href="{% url 'eliminar_poliza' poliza.id %}">Eliminar</a></th>
+        {% endif %}
         </table>
     {% endfor %}
 

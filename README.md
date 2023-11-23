@@ -40,3 +40,7 @@ Django 4.0
 ## Personas que participaron
 
 Dimitri Franco
+
+## Test units
+
+Revisar el Archivo "Unit Test IturbeSeguros"
