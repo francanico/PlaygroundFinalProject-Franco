@@ -12,7 +12,7 @@
                         {% if request.user.userextension.avatar %}
                             <img class="img-fluid rounded-circle mb-3" src= {{ request.user.userextension.avatar.url }} alt="Avatar"/>
                         {% else %}
-                            <img class="img-fluid rounded-circle mb-3" src= {% static 'img/blank-profile.jpg' %} alt="Sin avatar"/>
+                            <img class="img-fluid rounded-circle mb-3" src= {% static 'images/blank-profile.jpg' %} alt="Sin avatar"/>
                         {% endif %}
                     </div>
                 </div>
